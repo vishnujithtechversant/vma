@@ -1,0 +1,2 @@
+gunicorn --bind=0.0.0.0:8000 --workers=4 startup_parent:app
+gunicorn --bind=0.0.0.0:7000 --workers=4 startup_child:app
