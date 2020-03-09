@@ -6,11 +6,12 @@ class BaseConfig:
     TESTING = False
     SECRET_KEY = os.environ.get('SECRET_KEY', 'mysecretkey')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    PARENT_BASE_URL = os.environ.get("PARENT_BASE_URL")
+
 
 class DevelopmentConfig(BaseConfig):
     """Development configuration"""
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
-    DEBUG = True
 
 
 class TestingConfig(BaseConfig):
