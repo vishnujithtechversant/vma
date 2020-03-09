@@ -28,4 +28,4 @@ export FLASK_APP="app_${APP}:app"
 export DATABASE_URL="postgres://postgres:postgres@127.0.0.1:5432/vma_${APP}"
 # export FLASK_ENV=development
 # $CMD
-gunicorn --bind=0.0.0.0:$PORT --workers=4 "app_${APP}:app" $CERT_OPTIONS
+gunicorn --bind=0.0.0.0:$PORT --preload --workers=4 "app_${APP}:app" $CERT_OPTIONS
