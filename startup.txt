@@ -1,6 +1,0 @@
-FLASK_ENV=development
-export FLASK_APP="app_parent:app"
-export DATABASE_URL="postgres://postgres:postgres@127.0.0.1:5432/vma_parent"
-gunicorn --bind=0.0.0.0:8000 --workers=4 app_parent:app
-export DATABASE_URL="postgres://postgres:postgres@127.0.0.1:5432/vma_child"
-gunicorn --bind=0.0.0.0:7000 --workers=4 app_parent:app

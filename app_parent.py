@@ -15,6 +15,7 @@ from werkzeug import serving
 from parent_app.webapp import app
 
 
+# for flask dev server
 if __name__ == "__main__":
     API_HOST = "0.0.0.0"
     API_PORT = 8000
