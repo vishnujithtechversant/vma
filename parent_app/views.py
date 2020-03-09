@@ -1,10 +1,18 @@
-from flask import render_template
+from flask import jsonify, render_template
+from serializer import serialize
+from .db import get_schema
+
+from .models import User  # trigger migration
+
 
 def setup_routes(app):
     @app.route("/")
     def home():
         return render_template("home.html")
 
-    @app.route("/api/data")
-    def get_data():
-        return app.send_static_file("data.json")
+    @app.route("/api/get-schema")
+    def shema_view():
+        schema = get_schema()
+        return jsonify({
+            "schema": serialize(schema)
+        })
