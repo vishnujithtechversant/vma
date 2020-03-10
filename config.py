@@ -15,8 +15,8 @@ class BaseConfig:
 class DevelopmentConfig(BaseConfig):
     """Development configuration"""
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
-    FB_CLIENT_ID = os.environ.get('FB_CLIENT_ID', '1368492610005815')
-    FB_CLIENT_SECRET = os.environ.get('FB_CLIENT_SECRET', '51a4a2909b26a69fa2e6fbc132fc4b43')
+    FB_CLIENT_ID = os.environ.get('FB_CLIENT_ID')
+    FB_CLIENT_SECRET = os.environ.get('FB_CLIENT_SECRET')
     DEVELOPMENT = True
     DEBUG = True
 
