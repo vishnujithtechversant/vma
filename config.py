@@ -2,7 +2,14 @@ import os
 
 FB_AUTHORIZATION_BASE_URL = "https://www.facebook.com/dialog/oauth"
 FB_TOKEN_URL = "https://graph.facebook.com/oauth/access_token"
+# TODO get from config.ini
 BASE_URL = "https://035d8ee0.ngrok.io"
+
+
+def get_config_obj(inifile):
+    # TODO generate config object from inifile
+    pass
+
 
 class BaseConfig:
     """Base configuration"""
@@ -15,8 +22,8 @@ class BaseConfig:
 class DevelopmentConfig(BaseConfig):
     """Development configuration"""
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
-    FB_CLIENT_ID = os.environ.get('FB_CLIENT_ID','1368492610005815')
-    FB_CLIENT_SECRET = os.environ.get('FB_CLIENT_SECRET', '51a4a2909b26a69fa2e6fbc132fc4b43')
+    FB_CLIENT_ID = os.environ.get('FB_CLIENT_ID')
+    FB_CLIENT_SECRET = os.environ.get('FB_CLIENT_SECRET')
     DEVELOPMENT = True
     DEBUG = True
 
