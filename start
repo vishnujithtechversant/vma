@@ -2,7 +2,7 @@
 
 # acticate enviroment
 ENV_DIR= . ~/Env/venv/bin/activate
-PORT="7000"
+PORT="8000"
 CERT_OPTIONS="--certfile certs/server.crt --keyfile certs/server.key --ca-certs certs/root_ca.pem"
 CONFIG="config.in"
 DEBUG=0

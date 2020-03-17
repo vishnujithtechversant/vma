@@ -1,9 +1,14 @@
 import os
+import configparser
 
 FB_AUTHORIZATION_BASE_URL = "https://www.facebook.com/dialog/oauth"
 FB_TOKEN_URL = "https://graph.facebook.com/oauth/access_token"
-# TODO get from config.ini
-BASE_URL = "https://035d8ee0.ngrok.io"
+## TODO get from config.ini
+config = configparser.ConfigParser()
+configfilename = os.environ.get("VMACONFIG")
+config.read(configfilename)
+BASE_URL = config['parent']['baseurl']
+print(os.environ.get("VMACONFIG") )
 
 
 def get_config_obj(inifile):

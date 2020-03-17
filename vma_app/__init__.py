@@ -5,7 +5,7 @@ import configparser
 
 def create_app():
     config = configparser.ConfigParser()
-    configfilename = "config.ini"
+    configfilename = os.environ.get("VMACONFIG")
     config.read(configfilename)
     app = Flask(__name__)  # Create an instance of the class for our use
     app_settings = os.getenv("APP_SETTINGS", "config.DevelopmentConfig")

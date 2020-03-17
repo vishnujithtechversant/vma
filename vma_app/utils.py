@@ -1,12 +1,18 @@
 import urllib3
 import requests
-
+import configparser
 from requests.exceptions import ConnectionError
 from serializer import deserialize
+import os
 
 SCHEMA_ROUTE = "/api/get-schema"
-# TODO get from config
-CLIENT_CERT = "certs/client.pem"
+## TODO get from config
+config = configparser.ConfigParser()
+print(os.environ.get("VMACONFIG"))
+configfilename = os.environ.get("VMACONFIG")
+config.read(configfilename)
+print(config['parent']['client_cer'])
+CLIENT_CERT = config['parent']['client_cer']
 
 # for dev only
 urllib3.disable_warnings()
